@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+     <PreferenceCategory  android:title="Основные">
+
+        <CheckBoxPreference
+                android:key="table_clear_period_at_start"
+                android:title="Текущий период при старте"
+                android:defaultValue="true"
+                android:summary="При старте для поиска используется период с начало месяца до текущей даты" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory  android:title="Управление записями">
+
+        <CheckBoxPreference
+                android:key="delete_payments"
+                android:title="Можно удалять записи трат"
+                android:defaultValue="true"
+                android:summary="Будет доступна кнопка удаления" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+            android:title="Target summ">
+
+        <EditTextPreference
+                android:key="target_summ"
+                android:title="Month target summ"
+                android:summary="Month target summ"
+                android:inputType="numberDecimal"
+                android:dialogTitle="Month target summ" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Session timeout">
+
+        <EditTextPreference
+            android:key="SESSION_TIMEOUT"
+            android:title="Session timeout"
+            android:inputType="number"
+            android:dialogTitle="Session timeout" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

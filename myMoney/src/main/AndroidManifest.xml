@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example"
+    android:versionCode="2"
+    android:versionName="2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.example.MyMoneyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.activities.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.activities.BlankActivity"
+            android:label="@string/title_activity_blank" >
+        </activity>
+        <activity
+            android:name="com.example.activities.CreateAccountActivity"
+            android:label="@string/title_activity_create_account" >
+        </activity>
+        <activity
+            android:name="com.example.activities.UserActivity"
+            android:label="@string/title_activity_user" >
+        </activity>
+        <activity
+            android:name="com.example.activities.AdminToolsActivity"
+            android:label="@string/title_activity_admin_tools" >
+        </activity>
+        <activity
+            android:name="com.example.activities.SpendingTableActivity"
+            android:label="@string/title_activity_spending_table" >
+        </activity>
+        <activity
+            android:name="com.example.activities.PaymentDetailsActivity"
+            android:label="@string/title_activity_payment_details" >
+        </activity>
+        <activity
+            android:name="com.example.activities.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+
+    </application>
+
+</manifest>

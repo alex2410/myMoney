@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My money</string>
+    <string name="action_settings">Settings</string>
+    <string name="BtnName">124</string>
+    <string name="title_activity_login">Login</string>
+    <string name="name">Name</string>
+    <string name="pass">Password</string>
+    <string name="create">Create</string>
+    <string name="btnCreate">Create</string>
+    <string name="btnLogin">Login</string>
+    <string name="title_activity_blank">Blank</string>
+    <string name="title_activity_create_account">Create Account</string>
+    <string name="passRe">ReEnter pass</string>
+    <string name="none">None</string>
+    <string name="logout">Logout</string>
+    <string name="action_search">search</string>
+    <string name="show_user">User</string>
+    <string name="title_activity_user">User</string>
+    <string name="admin_menu">Admin menu</string>
+    <string name="title_activity_admin_tools">Admin Tools</string>
+    <string name="title_activity_spending_table">Spending Table</string>
+    <string name="spendingSectionTable">Spending Table</string>
+    <string name="spendingSectionAdding">Add IT</string>
+    <string name="spendingSectionReport">Reports</string>
+    <string name="tblColumnName">Name</string>
+    <string name="tblColumnSumm">Summ</string>
+    <string name="tblColumnType">Type</string>
+    <string name="title_activity_payment_details">Payment Details</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="err_enter_name">Введите имя</string>
+    <string name="err_enter_password">Введите пароль</string>
+    <string name="err_enter_password2">Введите пароль 2</string>
+    <string name="err_password_compare">Пароли не совпадают</string>
+    <string name="err_user_removed">Пользователь удален</string>
+    <string name="err_invalid_password">Не верный пароль</string>
+    <string name="err_enter_cost">Введите стоимость</string>
+    <string name="err_enter_product">Введите покупку</string>
+    <string name="error">Ошибка</string>
+    <string name="info">Информация</string>
+    <string name="warning">Внимание</string>
+    <string name="ok">Ок</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="remove_user">Удалить пользователя?</string>
+    <string name="service_not_found">Сервис не найден </string>
+    <string name="havent_value">Не имеет значения</string>
+    <string name="summ">Сумма</string>
+    <string name="remove_row">Удалить строку </string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+</resources>
