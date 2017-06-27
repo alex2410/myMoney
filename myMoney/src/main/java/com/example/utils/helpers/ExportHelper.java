@@ -25,13 +25,13 @@ public class ExportHelper {
 			IExportService<IExportable> service = ServiceContext.getService(IExportService.class);
 			String exportEntities = service.exportEntities(paymentsForPeriod, fileName);
 			if(!exportEntities.isEmpty()){
-				ServiceException.showMessace(exportEntities, activity);
+				ServiceException.showMessage(exportEntities, activity);
 			}
 		} catch (ServiceException e) {
-			ServiceException.showMessace(e, activity);
+			ServiceException.showMessage(e, activity);
 		} catch (Exception e) {
 			Log.e(getClass().getName(), "Fail export");
-			ServiceException.showMessace(new ServiceException(e), activity);
+			ServiceException.showMessage(new ServiceException(e), activity);
 		}
 	}
 }

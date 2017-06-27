@@ -31,10 +31,10 @@ public class UserHelper {
             User currentUser = service.getCurrentUser();
             return currentUser;
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail getCurrentUser");
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
 
         return null;
@@ -50,10 +50,10 @@ public class UserHelper {
                 ((BaseActivity) activity).saveSession("");
             }
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail logOutAction");
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
     }
 
@@ -76,10 +76,10 @@ public class UserHelper {
             User currentUser = getCurrentUser();
             return service.isUserAdmin(currentUser);
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail isUserAdmin");
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
         return false;
     }
@@ -96,16 +96,16 @@ public class UserHelper {
                 if (sharedPref != null) {
                     boolean commit = sharedPref.edit().clear().commit();
                     if (!commit) {
-                        ServiceException.showMessace(new ServiceException("Не удалось удалить настройки"), activity);
+                        ServiceException.showMessage(new ServiceException("Не удалось удалить настройки"), activity);
                     }
                 }
             }
             ActivityContext.switchToActivity(activity, LoginActivity.class);
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail removeUser, isPermanently =" + isPermanently);
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
     }
 
@@ -116,10 +116,10 @@ public class UserHelper {
         } catch (AccountException e) {
             throw e;
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail createAccount, name =" + name + " passEmpty=" + pass.isEmpty());
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
         return false;
     }
@@ -134,10 +134,10 @@ public class UserHelper {
         } catch (AccountException e) {
             throw e;
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail login, name =" + name + " passEmpty=" + pass.isEmpty());
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
         return false;
     }
@@ -149,10 +149,10 @@ public class UserHelper {
         } catch (AccountException e) {
             throw e;
         } catch (ServiceException e) {
-            ServiceException.showMessace(e, activity);
+            ServiceException.showMessage(e, activity);
         } catch (Exception e) {
             Log.e(getClass().getName(), "Fail restoreUser, name =" + name);
-            ServiceException.showMessace(new ServiceException(e), activity);
+            ServiceException.showMessage(new ServiceException(e), activity);
         }
         return false;
     }

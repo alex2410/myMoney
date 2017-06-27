@@ -33,10 +33,10 @@ public class SpendingHelper {
 				service.addSpending(user,p);
 			}
 		} catch (ServiceException e) {
-			ServiceException.showMessace(e,activity);
+			ServiceException.showMessage(e,activity);
 		} catch (Exception e) {
 			Log.e(getClass().getName(), "Fail add spending \n\r"+p);
-			ServiceException.showMessace(new ServiceException(e),activity);
+			ServiceException.showMessage(new ServiceException(e),activity);
 		}
 	}
 
@@ -49,10 +49,10 @@ public class SpendingHelper {
 				return service.getUserPaymentsForPeriod(currentUser,tablePeriod);
 			}
 		} catch (ServiceException e) {
-			ServiceException.showMessace(e, activity);
+			ServiceException.showMessage(e, activity);
 		} catch (Exception e) {
 			Log.e(getClass().getName(), "Fail getSpendingForPeriod\n\r"+tablePeriod);
-			ServiceException.showMessace(new ServiceException(e),activity);
+			ServiceException.showMessage(new ServiceException(e),activity);
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -63,11 +63,11 @@ public class SpendingHelper {
 			ISpendingService service = ServiceContext.getService(ISpendingService.class);
 			return service.removePayment(currentUser,payment);
 		} catch (ServiceException e) {
-			ServiceException.showMessace(e,activity);
+			ServiceException.showMessage(e,activity);
 			return false;
 		} catch (Exception e) {
 			Log.e(getClass().getName(), "Fail removePayment\n\r"+payment);
-			ServiceException.showMessace(new ServiceException(e),activity);
+			ServiceException.showMessage(new ServiceException(e),activity);
 			return false;
 		}
 	}
@@ -78,10 +78,10 @@ public class SpendingHelper {
 			Payment payment = service.getPaymentById(id);
 			return payment;
 		} catch (ServiceException e) {
-			ServiceException.showMessace(e, activity);
+			ServiceException.showMessage(e, activity);
 		} catch (Exception e) {
 			Log.e(getClass().getName(), "Fail getPaymentById id="+id+".");
-			ServiceException.showMessace(new ServiceException(e),activity);
+			ServiceException.showMessage(new ServiceException(e),activity);
 		}
 		return null;
 	}

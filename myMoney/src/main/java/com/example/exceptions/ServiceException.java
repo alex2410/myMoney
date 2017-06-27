@@ -16,7 +16,7 @@ public class ServiceException extends Exception{
 		super(thr);
 	}
 //TODO refactoring
-	public static void showMessace(ServiceException e, Context ctx) {
+	public static void showMessage(ServiceException e, Context ctx) {
 		if(e.getCause() instanceof Exception) {
 			Log.e(ctx.getClass().getName(), "Fail", e);
 		}
@@ -28,7 +28,7 @@ public class ServiceException extends Exception{
 	    dlgAlert.create().show();
 	}
 	
-	public static void showMessace(String text, Context ctx) {
+	public static void showMessage(String text, Context ctx) {
 		Log.i(ctx.getClass().getName(), "Info: "+ text);
 		
 		AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctx);                      

@@ -15,6 +15,7 @@ import com.example.utils.Constants;
 import com.example.utils.DateUtils;
 import com.example.utils.helpers.MenuHelper;
 import com.example.utils.helpers.UserHelper;
+import com.example.utils.helpers.UserPreferenceHelper;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -30,12 +31,14 @@ public abstract class BaseActivity extends Activity {
 
     protected MenuHelper menuHelper;
     protected UserHelper userHelper;
+    protected UserPreferenceHelper userPreferenceHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         menuHelper = new MenuHelper(this);
         userHelper = new UserHelper(this);
+        userPreferenceHelper = new UserPreferenceHelper(this, userHelper);
         setContentView(R.layout.activity_blank);
         User currentUser = userHelper.getCurrentUser();
         if (currentUser == null) {
@@ -168,15 +171,16 @@ public abstract class BaseActivity extends Activity {
             if (parseDate != null) {
                 Calendar instance = Calendar.getInstance();
                 instance.setTime(parseDate);
-                int sessionTimeout = getIntFromPref(Constants.USER_SETTINGS_PREFIX  + Constants.SESSION_TIMEOUT);
+                int sessionTimeout = userPreferenceHelper.getIntFromPref(Constants.SESSION_TIMEOUT, stringFromPref);
                 instance.add(Calendar.MINUTE, sessionTimeout);
                 boolean valid = instance.getTime().after(new Date());
                 boolean a = false;
                 if (valid) {
                     try {
                         a = userHelper.restoreUser(stringFromPref);
+                        saveSession(stringFromPref);
                     } catch (AccountException e) {
-                        ServiceException.showMessace(e, this);
+                        ServiceException.showMessage(e, this);
                     }
                 }
                 return valid && a;
